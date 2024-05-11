@@ -30,6 +30,7 @@ class App:
         self.root = root
         CTk.set_appearance_mode("light")
         CTk.set_default_color_theme("blue")
+        self.root.iconbitmap(r"images\logo.ico")
         
         self.hasLoadedLetterGame = False
         
@@ -39,8 +40,8 @@ class App:
         root.rowconfigure(0, weight=1)
         root.columnconfigure(0, weight=1)
         
-        self.KNOWFILE = open("know.txt", "r+", encoding = 'utf-8')
-        self.DKNOWFILE = open("dknow.txt", "r+", encoding = 'utf-8')
+        self.KNOWFILE = open(r"config\know.txt", "r+", encoding = 'utf-8')
+        self.DKNOWFILE = open(r"config\dknow.txt", "r+", encoding = 'utf-8')
         self.writeToArr()
         
         self.returnToMenuButton = CTk.CTkButton(root, text="Return to Menu", command=self.reset)
